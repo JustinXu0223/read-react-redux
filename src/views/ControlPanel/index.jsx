@@ -12,8 +12,9 @@ class ControlPanel extends Component {
     render() {
         return (
             <div>
-                <Counter caption="First" initValue={0}/>
-                <Counter caption="Second"/>
+                <Counter caption="First" />
+                <Counter caption="Second" initValue={10}/>
+                <Counter caption="Third" />
             </div>
         )
     }

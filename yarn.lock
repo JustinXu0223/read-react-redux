@@ -2,21 +2,6 @@
 # yarn lockfile v1
 
 
-"@types/history@^3":
-  version "3.2.2"
-  resolved "http://registry.npm.taobao.org/@types/history/download/@types/history-3.2.2.tgz#b6affa240cb10b5f841c6443d8a24d7f3fc8bb0c"
-
-"@types/react-router@3.0.5":
-  version "3.0.5"
-  resolved "http://registry.npm.taobao.org/@types/react-router/download/@types/react-router-3.0.5.tgz#ef5eea33f067d877586d06c464a5f864860be09d"
-  dependencies:
-    "@types/history" "^3"
-    "@types/react" "*"
-
-"@types/react@*":
-  version "16.0.34"
-  resolved "http://registry.npm.taobao.org/@types/react/download/@types/react-16.0.34.tgz#7a8f795afd8a404a9c4af9539b24c75d3996914e"
-
 abab@^1.0.3:
   version "1.0.4"
   resolved "http://registry.npm.taobao.org/abab/download/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
