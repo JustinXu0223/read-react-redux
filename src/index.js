@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './config/registerServiceWorker';
+import RouterConfig from './routers';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { browserHistory } from 'react-router';
+
+ReactDOM.render(<RouterConfig history={browserHistory} />, document.getElementById('root'));
 registerServiceWorker();
