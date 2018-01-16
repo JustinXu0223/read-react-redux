@@ -51,6 +51,9 @@ class Counter extends Component{
     componentWillReceiveProps (nextProps) {
         console.log(`enter componentWillReceiveProps,${nextProps.caption}`);
     }
+    shouldComponentUpdate(nextProps , nextState) {
+        return (nextProps.caption !== this.props.caption) || (nextState.count !==this.state.count);
+    }
 
     render(){
         console.log(`ControlPanel render, ${this.props.caption}`);
