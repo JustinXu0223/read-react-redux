@@ -15,6 +15,9 @@ class ControlPanel extends Component {
                 <Counter caption="First" />
                 <Counter caption="Second" initValue={10}/>
                 <Counter caption="Third" />
+                <button onClick={ () => this.forceUpdate () }>
+                    Click me to repaint!
+                </button>
             </div>
         )
     }

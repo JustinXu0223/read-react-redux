@@ -28,7 +28,7 @@ class Counter extends Component{
         this.state= {
             count: props.initValue,
         }
-        console.log(`enter constructor, ${this.props.caption}`);
+        // console.log(`enter constructor, ${this.props.caption}`);
     }
     // clickIncrementHandler(){}
     clickIncrementHandler=() =>{
@@ -41,16 +41,19 @@ class Counter extends Component{
     };
     // clickDecrementHandler(){}
 
-    componentWillMount() {
+    /*componentWillMount() {
         console.log(`enter componentWillMount,${this.props.caption}`);
-    }
+    }*/
 
-    componentDidMount() {
+    /*componentDidMount() {
         console.log(`enter componentDidMount,${this.props.caption}`);
+    }*/
+    componentWillReceiveProps (nextProps) {
+        console.log(`enter componentWillReceiveProps,${nextProps.caption}`);
     }
 
     render(){
-        console.log(`enter render, ${this.props.caption}`);
+        console.log(`ControlPanel render, ${this.props.caption}`);
         const buttonStyle= {
             marginRight: '15px',
         };
