@@ -32,12 +32,16 @@ class Counter extends Component{
     }
     // clickIncrementHandler(){}
     clickIncrementHandler=() =>{
-        this.setState({count : this.state.count + 1}, ()=>{
-            console.log('finish');
-        });
+        this.updateCount(true);
     };
     clickDecrementHandler=() =>{
-        this.setState({count : this.state.count - 1});
+        this.updateCount(false);
+    };
+    updateCount= (bool)=>{
+        const previousValue = this.state.count;
+        const newValue = bool ? previousValue + 1 : previousValue - 1;
+        this.setState ({count: newValue});
+        this.props.onUpdate(newValue, previousValue)
     };
     // clickDecrementHandler(){}
 
@@ -75,10 +79,12 @@ class Counter extends Component{
 Counter.propTypes= {
     caption: PropTypes.string.isRequired,
     initValue: PropTypes.number.isRequired,
+    onUpdate: PropTypes.func,
 };
 
 Counter.defaultProps = {
-    initValue: 0
+    initValue: 0,
+    onUpdate: f => f //默认是一个什么都不做的函数
 };
 
 export default Counter;
