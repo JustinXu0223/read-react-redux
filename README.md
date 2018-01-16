@@ -14,3 +14,8 @@
 ```html
 $ yarn add react-router@3.0.5 --dev
 ```
+
+### 增加Flux
+```html
+$ yarn add flux --dev
+```
