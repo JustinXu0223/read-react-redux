@@ -28,6 +28,7 @@ class Counter extends Component{
         this.state= {
             count: props.initValue,
         }
+        console.log(`enter constructor, ${this.props.caption}`);
     }
     // clickIncrementHandler(){}
     clickIncrementHandler=() =>{
@@ -40,8 +41,16 @@ class Counter extends Component{
     };
     // clickDecrementHandler(){}
 
+    componentWillMount() {
+        console.log(`enter componentWillMount,${this.props.caption}`);
+    }
+
+    componentDidMount() {
+        console.log(`enter componentDidMount,${this.props.caption}`);
+    }
+
     render(){
-        console.log('render');
+        console.log(`enter render, ${this.props.caption}`);
         const buttonStyle= {
             marginRight: '15px',
         };
