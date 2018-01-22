@@ -13,6 +13,7 @@ class Summary extends Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
             sum: SummaryStore.getSummary()
         }
