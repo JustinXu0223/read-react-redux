@@ -7,6 +7,7 @@
 
 import React, { Component } from 'react';
 import Counter from './Counter';
+import Summary from './Summary';
 
 class ControlPanel extends Component {
 
@@ -15,32 +16,18 @@ class ControlPanel extends Component {
         this.initValues = [
             {
                 title: 'First',
-                number: 0,
             },{
                 title: 'Second',
-                number: 10,
             },{
                 title: 'Third',
-                number: 20,
             }
         ];
-        const initSumArr= this.initValues.map(value => value.number);
-        this.state= {
-            sum: initSumArr.reduce((a,b)=> (a+b))
-        }
     }
-
-    // 子组件更新state回调。
-    onCounterUpdate= (newValue, previousValue)=>{
-        const { sum }= this.state;
-        const valueChange = newValue - previousValue;
-        this.setState({ sum: sum+ valueChange});
-    };
 
     // 遍历子组件
     mapCounter=() =>{
         return this.initValues.map((value,index)=>{
-            return <Counter key={index} onUpdate={this.onCounterUpdate} initValue={value.number} caption={value.title} />;
+            return <Counter key={index} caption={value.title} />;
         })
     };
 
@@ -49,7 +36,7 @@ class ControlPanel extends Component {
             <div>
                 {this.mapCounter()}
                 <hr/>
-                <div>Total Count: {this.state.sum}</div>
+                <Summary />
             </div>
         )
     }
