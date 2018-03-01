@@ -8,7 +8,7 @@
 * Run 'yarn start' OR 'npm run start'
 
 ### 部署环境
-* Run 'yarn build' OR'npm run build'
+* Run 'yarn build' OR 'npm run build'
 
 ### 增加路由
 ```html

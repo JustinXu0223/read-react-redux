@@ -5,11 +5,12 @@
  * @author jokerXu
  **/
 import * as React from 'react';
-import { Router,Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router';
 
 import App from '../views/app';
 import Error from '../views/Error';
 import ControlPanel from '../views/ControlPanel';
+import SimpleRedux from '../views/SimpleRedux';
 
 const RouterConfig = ({ history })=> {
     return (
@@ -17,6 +18,7 @@ const RouterConfig = ({ history })=> {
             <Route path="/" component={App}>
                 <IndexRoute />
                 <Route path="/demo-01" component={ControlPanel}/>
+                <Route path="/demo-02" component={SimpleRedux}/>
             </Route>
 
             <Route path="/404" component={Error} />

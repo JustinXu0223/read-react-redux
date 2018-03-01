@@ -4,12 +4,11 @@
  * @time 2018/3/1
  * @author jokerXu
  */
-import { combineReducers } from 'redux';
+import Demo from './Demo'
+import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
-	demo: enthusiasm,
-	auth: Auth,
-	routing: routerReducer,
+	demo: Demo,
 });
 
 export default rootReducer;

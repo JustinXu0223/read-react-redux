@@ -4,19 +4,21 @@
  * @time 2018/3/1
  * @author jokerXu
  */
-import * as Constants from '../../actionTypes/demo';
+import * as ActionTypes from '../../actionTypes/demo';
 
 const initState = {
-    enthusiasmLevel: 1,
-    languageName: 'TypeScript',
+	'First': 0,
+	'Second': 10,
+	'Third': 20
 };
-export function enthusiasm(state= initState, action) {
+export default function DemoReducer(state= initState, action) {
+	const {counterCaption} = action;
     switch (action.type) {
-        case Constants.INCREMENT_ENTHUSIASM:
-            return {...state, enthusiasmLevel: state.enthusiasmLevel + 1};
-        case Constants.DECREMENT_ENTHUSIASM:
-            return {...state, enthusiasmLevel: Math.max(1, state.enthusiasmLevel - 1)};
-        default:
-            return state;
+		case ActionTypes.INCREMENT:
+			return {...state, [counterCaption]: state[counterCaption] + 1};
+		case ActionTypes.DECREMENT:
+			return {...state, [counterCaption]: state[counterCaption] - 1};
+		default:
+			return state
     }
 }

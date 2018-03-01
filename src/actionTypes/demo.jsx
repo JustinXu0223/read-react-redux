@@ -4,6 +4,6 @@
  * @time 2018/3/1
  * @author jokerXu
  */
-export const INCREMENT_ENTHUSIASM = 'INCREMENT_ENTHUSIASM';
+export const INCREMENT = 'increment';
 
-export const DECREMENT_ENTHUSIASM = 'DECREMENT_ENTHUSIASM';
+export const DECREMENT = 'decrement';

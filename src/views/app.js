@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from '../assets/images/logo.svg';
+import { Link } from 'react-router';
 import './app.css';
 
-import { Link } from 'react-router';
+const logo = require('../assets/images/logo.svg');
 
 class App extends Component {
   render() {
@@ -16,6 +16,7 @@ class App extends Component {
         <hr/>
         <ul>
            <li><Link to="/demo-01">simpleDemo</Link></li>
+           <li><Link to="/demo-02">simpleRedux</Link></li>
            <li><Link to="/404">Error</Link></li>
         </ul>
         <hr/>
