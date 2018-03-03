@@ -11,17 +11,6 @@ Summary.propTypes = {
   sum: PropTypes.number.isRequired
 };
 
-function mapStateToProps(state) {
-  const { demo } = state
-  let sum = 0;
-  for (const key in demo) {
-    if (demo.hasOwnProperty(key)) {
-      sum += demo[key];
-    }
-  }
-  return {value: sum};
-}
-
 class SummaryContainer extends Component {
   constructor(props, context) {
 	super(props, context);
