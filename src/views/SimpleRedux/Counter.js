@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as Actions from '../../actions/demoActions';
 import {connect} from 'react-redux';
 
@@ -33,6 +34,14 @@ function mapDispatchToProps(dispatch, ownProps) {
     }
   }
 }
+//prop types
+Counter.propTypes = {
+  caption: PropTypes.string.isRequired,
+  onIncrement: PropTypes.func.isRequired,
+  onDecrement: PropTypes.func.isRequired,
+  value: PropTypes.number.isRequired
+};
+
 //export connect object
 //容器组件，把store上的状态转化为内层傻瓜组件的prop，把内层傻瓜组件中的用户动作转化为派送给store的动作
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
