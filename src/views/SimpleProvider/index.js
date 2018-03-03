@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Counter from './Counter.js';
 import Summary from './Summary.js';
-
 const style = {
 	margin: '20px'
 };

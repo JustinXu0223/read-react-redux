@@ -10,7 +10,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import App from '../views/app';
 import Error from '../views/Error';
 import ControlPanel from '../views/ControlPanel';
-import SimpleRedux from '../views/SimpleRedux';
+import SimpleProvider from '../views/SimpleProvider';
 
 const RouterConfig = ({ history })=> {
     return (
@@ -18,7 +18,7 @@ const RouterConfig = ({ history })=> {
             <Route path="/" component={App}>
                 <IndexRoute />
                 <Route path="/demo-01" component={ControlPanel}/>
-                <Route path="/demo-02" component={SimpleRedux}/>
+                <Route path="/demo-02" component={SimpleProvider}/>
             </Route>
 
             <Route path="/404" component={Error} />
