@@ -16,7 +16,7 @@ class App extends Component {
         <hr/>
         <ul>
            <li><Link to="/demo-01">simpleDemo</Link></li>
-           <li><Link to="/demo-02">simpleRedux</Link></li>
+           <li><Link to="/demo-02">TodoDemo</Link></li>
            <li><Link to="/404">Error</Link></li>
         </ul>
         <hr/>

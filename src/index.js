@@ -4,10 +4,8 @@ import './index.css';
 import registerServiceWorker from './config/registerServiceWorker';
 import RouterConfig from './routers';
 import {Provider} from 'react-redux';
-import StoreConfig  from './store';
+import store  from './store';
 import { browserHistory } from 'react-router';
-
-const store = StoreConfig();
 
 ReactDOM.render(
 	<Provider store={store}>

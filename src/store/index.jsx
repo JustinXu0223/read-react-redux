@@ -5,11 +5,26 @@
  * @author jokerXu
  */
 
-import {createStore} from 'redux';
-import rootReducer from '../reducers'
+import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
 
-const StoreConfig = () => {
-	return createStore (rootReducer);
-};
+import {reducer as todoReducer} from '../pages/Todo/TodoList';
+import {reducer as filterReducer} from '../pages/Todo/Filter';
 
-export default StoreConfig;
+const win = window;
+
+const reducer = combineReducers({
+  todos: todoReducer,
+  filter: filterReducer
+});
+
+const middlewares = [];
+if (process.env.NODE_ENV !== 'production') {
+  // middlewares.push(require('redux-immutable-state-invariant')());
+}
+
+const storeEnhancers = compose(
+	applyMiddleware(...middlewares),
+	(win && win.devToolsExtension) ? win.devToolsExtension() : (f) => f,
+);
+
+export default createStore(reducer, {}, storeEnhancers);
