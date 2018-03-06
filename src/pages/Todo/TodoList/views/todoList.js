@@ -41,13 +41,16 @@ const selectVisibleTodos = (todos, filter) => {
   }
 }
 
-const mapStateToProps = (state) => {
+/*const mapStateToProps = (state) => {
   return {
     todos: selectVisibleTodos(state.todos, state.filter)
   };
-}
+}*/
+const mapStateToProps = (state) => ({
+  todos: selectVisibleTodos(state.todos, state.filter)
+})
 
-const mapDispatchToProps = (dispatch) => {
+/*const mapDispatchToProps = (dispatch) => {
   return {
     onToggleTodo: (id) => {
       dispatch(toggleTodo(id));
@@ -56,7 +59,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(removeTodo(id));
     }
   };
-};
+};*/
 
 /*
 const mapDispatchToProps = (dispatch) => bindActionCreators({
@@ -64,6 +67,11 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
   onRemoveTodo: removeTodo
 }, dispatch);
 */
+
+const mapDispatchToProps = ({
+  onToggleTodo: toggleTodo,
+  onRemoveTodo: removeTodo
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
 

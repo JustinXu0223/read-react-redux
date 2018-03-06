@@ -5,24 +5,41 @@
  * @author jokerXu
  **/
 import * as React from 'react';
-import { Router, Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute, Redirect } from 'react-router';
 
 import App from '../pages/app';
-import Error from '../pages/Error';
-import ControlPanel from '../pages/ControlPanel';
-import Todo from '../pages/Todo';
+
+// ControlPanel
+const getControlPanelPage = (location, callback) => {
+  require.ensure ([], function (require) {
+    callback(null, require ('../pages/ControlPanel').default);
+  }, 'controlPanel');
+};
+// TodoPage
+const getTodoPage = (location, callback) => {
+  require.ensure ([], function (require) {
+    callback(null, require ('../pages/Todo').default);
+  }, 'todo');
+};
+
+// Error
+const getErrorPage = (location, callback) => {
+  require.ensure ([], function (require) {
+    callback(null, require ('../pages/Error').default);
+  }, 'error');
+};
 
 const RouterConfig = ({ history })=> {
     return (
         <Router history={history}>
             <Route path="/" component={App}>
                 <IndexRoute />
-                <Route path="/demo-01" component={ControlPanel}/>
-                <Route path="/demo-02" component={Todo}/>
+                <Route path="/demo-01" getComponent={getControlPanelPage} />
+                <Route path="/demo-02" getComponent={getTodoPage}/>
             </Route>
 
-            <Route path="/404" component={Error} />
-            <Route path="*" component={Error} />
+            <Route path="/404" getComponent={getErrorPage} />
+            <Redirect from="*" to="/404" />
         </Router>
     )
 };
